@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Attendance System</title>
+    <link rel="stylesheet" href="/CSS/index.css">
+</head>
+<link href="https://fonts.googleapis.com/css?family=Baloo+Bhai&display=swap" rel="stylesheet">
+<body>
+    <div id="login-page" class="login-container">
+        <div class="login-box">
+            <h2>Janab Gee Garments Login</h2>
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" required>
+                </div>
+                <div class="form-group password">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" required>
+                </div>
+                <button type="submit">Login</button>
+                <p id="login-error" class="error-message"></p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Main Application (hidden initially) -->
+    <div id="app-container" class="container" style="display: none;">
+    <div class="container">
+    <header>
+            <div class="header-content">
+                <h1>Janab Gee Garments</h1>
+                <div class="logo-container">
+                    <img src="/Images/logo1.jpeg" alt="JanabGee Garments" class="logo">
+                </div>
+            </div>
+        </header>
+
+        <div class="tabs">
+            <button class="tab-button active" data-tab="home">Home</button>
+            <button class="tab-button" data-tab="attendance">Attendance Summary</button>
+        </div>
+
+        <div id="home" class="tab-content active">
+            <h2>Add New Employee</h2>
+            <form id="employee-form">
+                <div class="form-group">
+                    <label for="employee-name">Name:</label>
+                    <input type="text" id="employee-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="employee-id">ID:</label>
+                    <input type="text" id="employee-id" required>
+                </div>
+                <button type="submit">Add Employee</button>
+            </form>
+
+            <h2>Mark Today's Attendance</h2>
+            <div class="attendance-form">
+                <div class="form-group">
+                    <label for="attendance-date">Date:</label>
+                    <input type="date" id="attendance-date" required>
+                </div>
+                <table id="attendance-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Time of Report</th>
+                            <th>Time of Leave</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="attendance-list">
+                        <!-- Employee attendance rows will be added here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div id="attendance" class="tab-content">
+            <h2>Attendance Summary</h2>
+            <div class="filter-section">
+                <label for="summary-date">Select Date:</label>
+                <input type="date" id="summary-date">
+                <button id="filter-button">Filter</button>
+                <button id="reset-button">Show Today</button>
+            </div>
+            <table id="summary-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Time of Report</th>
+                        <th>Time of Leave</th>
+                        <th>Status</th>
+                        <th>Date</th>
+                    </tr>
+                </thead>
+                <tbody id="summary-list">
+                    <!-- Attendance summary rows will be added here -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+
+    <script src="/Javascript/index.js"></script>
+</body>
+</html>
